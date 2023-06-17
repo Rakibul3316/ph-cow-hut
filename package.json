@@ -2,11 +2,13 @@
   "name": "3.cow-hut",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "start": "dist/server.js",
-    "build": "npm run build",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

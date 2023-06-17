@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const http_status_1 = __importDefault(require("http-status"));
-const routes_1 = __importDefault(require("../src/app/routes"));
+const index_1 = __importDefault(require("./app/routes/index"));
 const globalErrorHandler_1 = __importDefault(require("./app/middlewares/globalErrorHandler"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 // All Routes
-app.use("/api/v1", routes_1.default);
+app.use("/api/v1", index_1.default);
 // Global Error Handler
 app.use(globalErrorHandler_1.default);
 // Handle not found
